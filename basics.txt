@@ -1,0 +1,28 @@
+#Section 1: Grammar
+
+1. What data types does Javascript provide?
+A: Six primitive types: string, number, boolean, null, undefined, Symbol (new in ECMAScrpt 6) and Objects. 
+   
+   Number: the double precision 64-bit binary format; 3 symbolic values: +Infinity, -Infinity and NaN
+
+   String: immutable. a set of 16-bit unsigned integer values.
+
+   Symbol: unique and immutable primitive value
+
+   Object: a keyed collection of properties
+
+   use typeof to know the data type
+
+   p.s. You may argue that typeof(null) returns 'object', this is a bug to be fixed.
+
+ 2. What values are falsy?
+ A: false, 0, null, undefined, '', NaN; Others are true including 'false'
+
+ 3. How to create an object?
+ A: use literal like 
+	 var person = {
+         id: 123,
+         sex: 'male',
+         'first-name': 'Ed',
+         'last-name': 'Green'
+	 };
