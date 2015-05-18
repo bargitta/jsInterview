@@ -26,3 +26,16 @@ A: Six primitive types: string, number, boolean, null, undefined, Symbol (new in
          'first-name': 'Ed',
          'last-name': 'Green'
 	 };
+
+  4. What is closure?
+  A: A closure is a function having access to its parent scope, even after the parent function has closed. 
+
+  5. What is JSON? What is the difference between a javascript object and a JSON data?
+  A: JSON is JavaScript Object Notation, a data interchange format. JSON is a syntax. JSON data is text only though it uses JavaScript data format.
+  
+  6. What is prototype? How to inherit from an object in javascript?
+
+  7. How to define a function?
+  A: var func = function(){}; function func(){}
+  8. How to call a function?
+  
