@@ -26,3 +26,13 @@ A: Six primitive types: string, number, boolean, null, undefined, Symbol (new in
          'first-name': 'Ed',
          'last-name': 'Green'
 	 };
+
+  4. What is closure?
+
+  5. What is JSON? What is the difference between a javascript object and a JSON object?
+
+  6. What is prototype? How to inherit from an object in javascript?
+
+  7. How to define a function?
+
+  8. How to call a function?
