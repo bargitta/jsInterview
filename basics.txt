@@ -1,6 +1,7 @@
 #Section 1: Grammar
+This section includes basic concepts in JavaScript: data type, function, closure.
 
-1. What data types does Javascript provide?
+1. What data types does JavaScript provide?
 A: Six primitive types: string, number, boolean, null, undefined, Symbol (new in ECMAScrpt 6) and Objects. 
    
    Number: the double precision 64-bit binary format; 3 symbolic values: +Infinity, -Infinity and NaN
@@ -30,12 +31,41 @@ A: Six primitive types: string, number, boolean, null, undefined, Symbol (new in
   4. What is closure?
   A: A closure is a function having access to its parent scope, even after the parent function has closed. 
 
-  5. What is JSON? What is the difference between a javascript object and a JSON data?
+  5. What is JSON? What is the difference between a JavaScript object and a JSON data?
   A: JSON is JavaScript Object Notation, a data interchange format. JSON is a syntax. JSON data is text only though it uses JavaScript data format.
   
-  6. What is prototype? How to inherit from an object in javascript?
+  6. What is prototype? How to inherit from an object in JavaScript?
 
   7. How to define a function?
   A: var func = function(){}; function func(){}
-  8. How to call a function?
   
+  8. How to call a function?
+  A: There are four ways to call a function and what "this" points to depends on how the function is invoked. 
+     var repository = {
+        name: "JS interview",
+        getLogo: function(){
+          return this.name + "-repository";
+        }
+     };
+
+  1) Call function getLogo directly;
+      var func = repository.getLogo
+      func();
+      //"this" is pointing to globle object (Window in browser)
+  2) Call as a method of an object; 
+      repository.getLogo();
+      //"this" is pointing to repository
+  3) Use call or apply; Use contructor to call a function. 
+      repository.getLogo.call({name:"test"});
+      repository.getLogo.apply({name:"test"});
+      //"this" is pointing to {name:"test"}
+  4) Use as constructor
+     var Repository = function(name){
+        this.name = name;
+     };
+     Repository.prototype.getLogo = function(){
+        return this.name + "-repository";
+     };
+
+     var jsRepo = new Repository("JS interview");
+     jsRepo.getLogo();
