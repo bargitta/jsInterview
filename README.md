@@ -41,7 +41,14 @@ A closure is a function having access to its parent scope, even after the parent
 
 JSON is JavaScript Object Notation, a data interchange format. JSON is a syntax. JSON data is text only, though it uses JavaScript data format.
   
-**What is prototype? How to inherit from an object in JavaScript?**
+**How to inherit from an object in JavaScript?**
+
+Use prototype to inherit from another object.
+
+```javascript
+
+
+```
 
 **How to define a function?**
 
@@ -60,27 +67,28 @@ There are four ways to call a function and what "this" points to depends on how 
         }
      };
 ```
-  1. Call function getLogo directly;
+
+*Call function getLogo directly;
 
 ```javascript
       var func = repository.getLogo
       func();
       //"this" is pointing to globle object (Window in browser)
 ```
-  2. Call as a method of an object; 
+*Call as a method of an object; 
 
 ```javascript
       repository.getLogo();
       //"this" is pointing to repository
 ```
-  3. Use call or apply; Use contructor to call a function;
+*Use call or apply; Use contructor to call a function;
 
 ```javascript 
       repository.getLogo.call({name:"test"});
       repository.getLogo.apply({name:"test"});
       //"this" is pointing to {name:"test"}
 ```
-  4. Use as constructor
+*Use as constructor
 
 ```javascript
      var Repository = function(name){
@@ -94,3 +102,9 @@ There are four ways to call a function and what "this" points to depends on how 
      jsRepo.getLogo();
 ```
 **What is same-origin policy?**
+
+Web browser constrains interactions between two origins, e.g., XHR by default is not allowed between two origins. Two resources have the same origin if they have same protocol, host, port. e.g. 'http://www.abc.com' and 'http://mail.abc.com' are different origins. 
+
+**How to make cross origin XHR?**
+
+Various methods like JSONP and [CORS](http://www.w3.org/TR/cors/). CORS: set web server to allow trusted origins. In request header, you will have Origin, and in response header you will see Access-Control-Allow-Origin
