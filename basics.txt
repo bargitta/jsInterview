@@ -69,3 +69,5 @@ A: Six primitive types: string, number, boolean, null, undefined, Symbol (new in
 
      var jsRepo = new Repository("JS interview");
      jsRepo.getLogo();
+
+  9. What is same-origin policy?
