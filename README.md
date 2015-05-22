@@ -43,10 +43,15 @@ JSON is JavaScript Object Notation, a data interchange format. JSON is a syntax.
   
 **How to inherit from an object in JavaScript?**
 
-Use prototype to inherit from another object.
-
 ```javascript
-
+var base = {
+	name: "base",
+	getReason: function(){
+		return "reason"
+	}
+}
+//the prototype of error is base
+var error = Object.create(base);
 
 ```
 
