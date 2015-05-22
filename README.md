@@ -109,6 +109,7 @@ There are four ways to call a function and what "this" points to depends on how 
 
      var jsRepo = new Repository("JS interview");
      jsRepo.getLogo();
+     //jsRepo inherits Repository
 ```
 **What is same-origin policy?**
 
