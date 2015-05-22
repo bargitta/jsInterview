@@ -86,14 +86,14 @@ There are four ways to call a function and what "this" points to depends on how 
       repository.getLogo();
       //"this" is pointing to repository
 ```
-*Use call or apply; Use contructor to call a function;
+*Use call or apply; 
 
 ```javascript 
       repository.getLogo.call({name:"test"});
       repository.getLogo.apply({name:"test"});
       //"this" is pointing to {name:"test"}
 ```
-*Use as constructor
+*Use as constructor;
 
 ```javascript
      var Repository = function(name){
