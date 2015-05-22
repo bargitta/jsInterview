@@ -50,9 +50,13 @@ var base = {
 		return "reason"
 	}
 }
-//the prototype of error is base
 var error = Object.create(base);
+//error inherits base, and the prototype of error is base
+//the prototype chain is like error-->base-->null
 
+//another example here
+var numbers = ['1', '2', '3'];
+//the prototype chain: numbers-->Array.prototype-->Object.prototype-->null
 ```
 
 **How to define a function?**
@@ -93,7 +97,7 @@ There are four ways to call a function and what "this" points to depends on how 
       repository.getLogo.apply({name:"test"});
       //"this" is pointing to {name:"test"}
 ```
-*Use as constructor;
+*Use as constructor, the function is called with new keyword
 
 ```javascript
      var Repository = function(name){
