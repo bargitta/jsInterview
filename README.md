@@ -8,14 +8,17 @@ This section includes basic concepts in JavaScript: data type, function, closure
 
 **What data types does JavaScript provide?**
 
-Six primitive types: string, number, boolean, null, undefined, Symbol (new in ECMAScrpt 6) and Objects. 
+Six primitive types: String, Number, Boolean, Null, Undefined, Symbol (new in ECMAScrpt 6) and Objects. 
 Number: the double precision 64-bit binary format; 3 symbolic values: +Infinity, -Infinity and NaN
+
 String: immutable. a set of 16-bit unsigned integer values.
+
 Symbol: unique and immutable primitive value
+
 Object: a keyed collection of properties
 
 use typeof to know the data type
-p.s. You may argue that typeof(null) returns 'object', this is a bug to be fixed.
+p.s. You may argue that typeof(null) returns 'object', and this is a bug to be fixed.
 
 **What values are falsy?**
 
@@ -82,7 +85,7 @@ There are four ways to call a function and what "this" points to depends on how 
 ```javascript
       var func = repository.getLogo
       func();
-      //"this" is pointing to globle object (Window in browser)
+      //"this" is pointing to globle object (window in browser)
 ```
 *Call as a method of an object; 
 
@@ -90,7 +93,7 @@ There are four ways to call a function and what "this" points to depends on how 
       repository.getLogo();
       //"this" is pointing to repository
 ```
-*Use call or apply; 
+*Use call or apply
 
 ```javascript 
       repository.getLogo.call({name:"test"});
@@ -118,3 +121,56 @@ Web browser constrains interactions between two origins, e.g., XHR by default is
 **How to make cross origin XHR?**
 
 Various methods like JSONP and [CORS](http://www.w3.org/TR/cors/). CORS: set web server to allow trusted origins. In request header, you will have Origin, and in response header you will see Access-Control-Allow-Origin
+
+### Section 2: Programming tests
+
+**What is the output of the following program?**
+```javascript
+function Article(content, name){
+		this.content = content;
+		this.name = name;
+		this.test = function(){
+			console.log(content + name);
+		}
+	}
+	var a1 = new Article('content1','name1');
+	var a2 = new Article('content2','name2');
+	
+	a1.test.call(a2);	
+  ```
+  
+**What is the output of the following program?**
+```javascript
+var a = [3,2,4];
+var u = 0;
+for (var i in a){
+  u += i;
+}
+console.log(u);
+```
+
+**Single thread**
+```javascript
+// what is the output?
+//how to change the behavior to the expected?
+for(var i = 0; i < 3; i++){
+	setTimeout(function(){
+		console.log(i);
+	},0);
+}
+```
+**Exception handling**
+```javascript
+(function(){
+	try{
+		var person = {};
+		setTimeout(function(){
+			console.log(person.name);
+			console.log(person.getName());
+		},0);
+	}catch(exception){
+		console.log("caught an exception");
+	}
+
+})();
+```
