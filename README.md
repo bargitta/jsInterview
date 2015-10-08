@@ -188,6 +188,6 @@ setTimeout(callMe,
 //code piece 2
 setInterval(callMe, 10);
 
-What is the difference between code piece 1 and 2?
+//What is the difference between code piece 1 and 2?
 
 ```
