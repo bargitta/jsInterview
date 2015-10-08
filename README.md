@@ -174,20 +174,23 @@ for(var i = 0; i < 3; i++){
 
 })();
 ```
-**Timer**
+**Timer and single thread**
 ```javascript
 function callMe(){
 	console.log("calling...");
 }
 
 //code piece 1
-setTimeout(callMe,
+setTimeout(function(){
 	setTimeout(callMe, 10);
-,10);
+},10);
 
 //code piece 2
 setInterval(callMe, 10);
 
 //What is the difference between code piece 1 and 2?
+//setInterval will attempt to execute callMe every 10ms regardless of when the last callMe is executed. Browser will not queue up more than one callMe in the queue. setTimeout will execute callMe at least 10ms delay after the previous callMe executed
 
+//When to use code piece 1?
+//It can be used for long time data processing. Break data into blocks and use the timer to process block by block
 ```
