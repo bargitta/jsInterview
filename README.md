@@ -174,3 +174,20 @@ for(var i = 0; i < 3; i++){
 
 })();
 ```
+**Timer**
+```javascript
+function callMe(){
+	console.log("calling...");
+}
+
+//code piece 1
+setTimeout(callMe,
+	setTimeout(callMe, 10);
+,10);
+
+//code piece 2
+setInterval(callMe, 10);
+
+What is the difference between code piece 1 and 2?
+
+```
