@@ -100,10 +100,10 @@ There are four ways to call a function and what "this" points to depends on how 
       repository.getLogo.apply({name:"test"});
       //"this" is pointing to {name:"test"}
 ```
-*Use as constructor, the function is called with new keyword
+*Use as constructor, the function is called with new keyword, prototype always works with constructor
 
 ```javascript
-     var Repository = function(name){
+     function Repository(name){
         this.name = name;
      };
      Repository.prototype.getLogo = function(){
@@ -111,8 +111,14 @@ There are four ways to call a function and what "this" points to depends on how 
      };
 
      var jsRepo = new Repository("JS interview");
-     jsRepo.getLogo();
-     //jsRepo inherits Repository
+     jsRepo.getLogo(); 
+     //getLogo function is attached to jsRepo
+     
+     console.log(jsRepo.constructor === Repository); 
+     //constructor is function Repository
+     
+     console.log(jsRepo.constructor.prototype === Repository.prototype);
+     //prototype is a property of constructor
 ```
 **What is same-origin policy?**
 
