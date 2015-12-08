@@ -59,13 +59,16 @@ var error = Object.create(base);
 
 //another example here
 var numbers = ['1', '2', '3'];
+numbers.constructor.prototype === Array.prototype; //true
 //the prototype chain: numbers-->Array.prototype-->Object.prototype-->null
 ```
 
 **How to define a function?**
 
 ```javascript
-  var func = function(){}; function func(){}
+  var func = function(){}; //no function name
+  
+  function func(){} //function name is func
 ``` 
 **How to call a function?**
 
