@@ -1,9 +1,9 @@
 # jsInterview
 JavaScript is a flexible language, and also the predominant language in the Web world. 
-This repository contains questions I have used in past javascript interviews. Hopefully it can help you
-a little bit when preparing your job interview or developing javascript projects.
+This repository contains questions I have used in past browser side javascript interviews, code snippets from books and daily work. 
+Hopefully it can help you a little bit when preparing your job interview or developing javascript projects.
 
-### Section 1: Grammar
+### Section 1: JavaScript Basics
 This section includes basic concepts in JavaScript: data type, function, closure, etc.
 
 **What data types does JavaScript provide?**
@@ -120,6 +120,27 @@ There are four ways to call a function and what "this" points to depends on how 
      console.log(jsRepo.constructor.prototype === Repository.prototype);
      //prototype is a property of constructor
 ```
+**How to check an object's type?**
+```javascript
+    var a = 2;
+    console.log(typeof a); //'number'
+    console.log(a.constructor === Number) //'true'
+```
+**How to implement inheritance like User <-- Admin**
+```javascript
+    function User(){}
+    User.prototype.logIn = function(){};
+    function Admin(){}
+    Admin.prototype = new User(); //changing subclass prototype won't affect superclass behavior
+    Admin.prototype.grantAccess = function(){};    
+    var admin1 = new Admin();
+    var user1 = new User();
+    console.log(admin1 instanceof Admin);
+    console.log(admin1 instanceof User);
+    console.log(admin1.grantAccess);
+    console.log(user1.grantAccess);//undefined
+```
+
 **What is same-origin policy?**
 
 Web browser constrains interactions between two origins, e.g., XHR by default is not allowed between two origins. Two resources have the same origin if they have same protocol, host, port. e.g. 'http://www.abc.com' and 'http://mail.abc.com' are different origins. 
