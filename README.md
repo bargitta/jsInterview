@@ -231,10 +231,8 @@ setInterval(callMe, 10);
 ```
 ### Section 3: Design questions
 
-**RESTful API?**
+**How to design RESTful API?**
 
-How to design RESTful API?
+**How to design a query?**
 
 You can think about HTTP header, verb, url, error code and response format. 
-
-How to design a query?
