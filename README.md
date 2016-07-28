@@ -150,7 +150,12 @@ Web browser constrains interactions between two origins, e.g., XHR by default is
 
 **How to make cross origin XHR?**
 
-Various methods like JSONP and [CORS](http://www.w3.org/TR/cors/). CORS: set web server to allow trusted origins. In request header, you will have Origin, and in response header you will see Access-Control-Allow-Origin
+Various methods like JSONP and [CORS](http://www.w3.org/TR/cors/). CORS: set web server to allow trusted origins. 
+
+Why settings in the server side can let browser relax its constraints?
+
+Ah, there must be some communication between server and browser. Actually the browser sends an HTTP OPTIONS request to check whether the cross origin request is allowed.
+In request header, you will have Origin, and in response header you will see Access-Control-Allow-Origin
 
 ### Section 2: Programming tests
 
@@ -224,3 +229,12 @@ setInterval(callMe, 10);
 //When to use code piece 1?
 //It can be used for long time data processing. Break data into blocks and use the timer to process block by block
 ```
+### Section 3: Design questions
+
+**RESTful API?**
+
+How to design RESTful API?
+
+You can think about HTTP header, verb, url, error code and response format. 
+
+How to design a query?
