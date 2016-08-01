@@ -128,6 +128,9 @@ There are four ways to call a function and what "this" points to depends on how 
     var a = 2;
     console.log(typeof a); //'number'
     console.log(a.constructor === Number) //'true'
+    console.log(Array.isArray([1,2,3])) //'true'
+    //utility function
+    function isFunction(value) {return typeof value === 'function';}
 ```
 **How to implement inheritance like User <-- Admin**
 ```javascript
@@ -142,6 +145,35 @@ There are four ways to call a function and what "this" points to depends on how 
     console.log(admin1 instanceof User);
     console.log(admin1.grantAccess);
     console.log(user1.grantAccess);//undefined
+```
+**Funtion hoisting**
+
+JavaScript allows you to call a function before its definition
+```javascript
+  look();
+  function look(){
+    console.log('look');
+  }
+```
+However, the following example does not work, because look is not defined
+as a function, but a function expression.
+```javascript
+  look(); //Uncaught type error, look is not a function
+  var look = function(){
+    console.log('look');
+  }
+```
+It is similar to this
+```javascript
+var look;
+look();//Uncaught type error,
+look = function(){}
+```
+```javascript
+  look1(); //Uncaught type error, look1 is not a function
+  var look = function look1(){
+    console.log('look');
+  }
 ```
 
 **What is same-origin policy?**
