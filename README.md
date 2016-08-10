@@ -1,7 +1,7 @@
-# jsInterview
+# JavaScript Interview Questions
 JavaScript is a flexible language, and also the predominant language in the Web world. 
-This repository contains questions I have used in past browser side javascript interviews, code snippets from books and daily work. 
-Hopefully it can help you a little bit when preparing your job interview or developing javascript projects.
+This repository contains questions I have used in past browser side JavaScript interviews, code snippets from books and daily work. 
+Hopefully it can help you a little bit when preparing your job interview or developing JavaScript projects.
 
 ### Section 1: JavaScript Basics
 This section includes basic concepts in JavaScript: data type, function, closure, etc.
