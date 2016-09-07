@@ -178,7 +178,11 @@ look = function(){}
 
 **What is same-origin policy?**
 
-Web browser constrains interactions between two origins, e.g., XHR by default is not allowed between two origins. Two resources have the same origin if they have same protocol, host, port. e.g. 'http://www.abc.com' and 'http://mail.abc.com' are different origins. 
+In fact, there is no single same-origin policy, but rather, a set of mechanisms.
+The principal intent is to allow scripting and other interactions between pages served as a part of the same site while almost preventing
+ interactions between different origins, e.g., XHR by default is not allowed between two origins. 
+ 
+ Two resources have the same origin if they have same protocol, host, port. e.g. 'http://www.abc.com' and 'http://mail.abc.com' are different origins. 
 
 **How to make cross origin XHR?**
 
